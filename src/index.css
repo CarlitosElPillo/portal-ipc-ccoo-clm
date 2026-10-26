@@ -1,0 +1,893 @@
+/* ==========================================================================
+   PORTAL IPC CASTILLA-LA MANCHA | CCOO CLM
+   Generador de Tarjetas e Infografías Oficiales (Formato Claro de Alto Contraste)
+   ========================================================================== */
+
+:root {
+  /* CCOO Brand Red Palette */
+  --ccoo-red: #D60000;
+  --ccoo-red-dark: #A50000;
+  --ccoo-red-light: #FF2B2B;
+  --ccoo-red-subtle: #FFF1F1;
+  --ccoo-red-border: #FECACA;
+
+  /* Pure Light Theme Colors */
+  --bg-main: #F4F6F9;
+  --bg-card: #FFFFFF;
+  --bg-card-hover: #F8FAFC;
+  --bg-glass: rgba(255, 255, 255, 0.95);
+  
+  --text-primary: #0F172A;
+  --text-secondary: #334155;
+  --text-muted: #64748B;
+  --text-white: #FFFFFF;
+
+  --border-light: #E2E8F0;
+  --border-medium: #CBD5E1;
+
+  /* Accent & Status */
+  --accent-blue: #1D4ED8;
+  --accent-blue-bg: #EFF6FF;
+  --accent-blue-border: #BFDBFE;
+
+  --accent-amber: #B45309;
+  --accent-amber-bg: #FEF3C7;
+  --accent-amber-border: #FDE68A;
+
+  --accent-emerald: #047857;
+  --accent-emerald-bg: #ECFDF5;
+  --accent-emerald-border: #A7F3D0;
+
+  /* Elevation */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.04);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.09), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+  --shadow-card: 0 12px 30px -4px rgba(15, 23, 42, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.03);
+
+  /* Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  --radius-full: 9999px;
+
+  --transition-fast: 0.18s ease;
+  --transition-normal: 0.25s ease;
+}
+
+/* Base Reset & Typography */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, .font-heading {
+  font-family: 'Outfit', sans-serif;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Site Header */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--bg-glass);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 0;
+  gap: 1.5rem;
+}
+
+.brand-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1.15;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.brand-badge {
+  background: var(--ccoo-red);
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 0.2rem 0.5rem;
+  border-radius: var(--radius-sm);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.brand-subtitle {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+/* Standard Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.55rem 0.95rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--ccoo-red) 0%, var(--ccoo-red-dark) 100%);
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(214, 0, 0, 0.25);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #e60000 0%, #ba0000 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(214, 0, 0, 0.35);
+}
+
+.btn-secondary {
+  background: #FFFFFF;
+  color: var(--text-primary);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-secondary:hover {
+  background: #F8FAFC;
+  border-color: var(--border-medium);
+  transform: translateY(-1px);
+}
+
+.live-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-full);
+  background: var(--accent-emerald-bg);
+  color: var(--accent-emerald);
+  border: 1px solid var(--accent-emerald-border);
+}
+
+.pulse-dot {
+  width: 7px;
+  height: 7px;
+  background-color: #10B981;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+  70% { transform: scale(1.1); box-shadow: 0 0 0 5px rgba(16, 185, 129, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+
+/* Top Info Bar */
+.generator-top-info-bar {
+  background: #FFFFFF;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Generator Controls Card */
+.generator-controls-card {
+  background: #FFFFFF;
+  border-radius: var(--radius-xl);
+  padding: 1.75rem;
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-md);
+  margin-bottom: 2rem;
+}
+
+.generator-controls-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--border-light);
+  margin-bottom: 1.25rem;
+}
+
+.control-icon-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  background: var(--ccoo-red-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.controls-main-title {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+.controls-main-desc {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 0.2rem;
+}
+
+.action-buttons-group {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+}
+
+.controls-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+
+@media (max-width: 850px) {
+  .controls-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.control-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.field-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.text-btn-reset {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.text-btn-reset:hover {
+  color: var(--ccoo-red);
+}
+
+.field-input {
+  width: 100%;
+  padding: 0.65rem 0.95rem;
+  font-size: 0.925rem;
+  font-family: inherit;
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-md);
+  outline: none;
+  background: #FFFFFF;
+  color: var(--text-primary);
+  transition: all var(--transition-fast);
+}
+
+.field-input:focus {
+  border-color: var(--ccoo-red);
+  box-shadow: 0 0 0 3px rgba(214, 0, 0, 0.12);
+}
+
+.quick-suggestions-row {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  margin-top: 0.35rem;
+}
+
+.suggestions-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.suggestion-chip {
+  background: #F1F5F9;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  padding: 0.25rem 0.55rem;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.suggestion-chip:hover {
+  background: var(--ccoo-red-subtle);
+  border-color: var(--ccoo-red-border);
+  color: var(--ccoo-red-dark);
+}
+
+.segmented-control {
+  display: inline-flex;
+  background: #E2E8F0;
+  padding: 0.2rem;
+  border-radius: var(--radius-md);
+}
+
+.segment-btn {
+  padding: 0.35rem 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border: none;
+  background: transparent;
+  color: var(--text-secondary);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.segment-btn.active {
+  background: #FFFFFF;
+  color: var(--ccoo-red);
+  box-shadow: var(--shadow-sm);
+  font-weight: 700;
+}
+
+.checkbox-toggle-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.825rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  cursor: pointer;
+  background: #F8FAFC;
+  padding: 0.35rem 0.75rem;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+}
+
+/* ==========================================================================
+   LIENZO DE LA TARJETA (100% FORMATO CLARO DE ALTO CONTRASTE)
+   ========================================================================== */
+
+.card-preview-area {
+  margin-top: 1rem;
+}
+
+.preview-label-tag {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  margin-bottom: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* The actual light card container */
+.light-social-card {
+  width: 100%;
+  background: #FFFFFF;
+  border-radius: var(--radius-xl);
+  border: 2px solid #E2E8F0;
+  box-shadow: var(--shadow-card);
+  padding: 2.25rem;
+  position: relative;
+  overflow: hidden;
+  color: var(--text-primary);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.light-social-card.format-horizontal {
+  max-width: 1020px;
+  margin: 0 auto;
+}
+
+.light-social-card.format-square {
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+/* Top Accent Red Bar */
+.card-top-red-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: linear-gradient(90deg, #D60000 0%, #B91C1C 100%);
+}
+
+/* 1. Header of the Light Card */
+.light-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 2px solid #F1F5F9;
+}
+
+.header-brand-box {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.ccoo-logo-solid {
+  background: #D60000;
+  color: #FFFFFF;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 900;
+  font-size: 1.75rem;
+  line-height: 1;
+  padding: 0.45rem 1rem;
+  border-radius: 8px;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 10px rgba(214, 0, 0, 0.2);
+}
+
+.brand-text-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-region-name {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #0F172A;
+  line-height: 1.15;
+}
+
+.brand-department-name {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #D60000;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.header-meta-box {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.25rem;
+}
+
+.meta-period-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: #FFF1F1;
+  border: 1px solid #FECACA;
+  color: #991B1B;
+  font-size: 0.8rem;
+  font-weight: 800;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-full);
+}
+
+.meta-ine-source {
+  font-size: 0.725rem;
+  color: var(--text-muted);
+}
+
+/* 2. Headline Box */
+.light-card-headline-box {
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-left: 5px solid #D60000;
+  border-radius: var(--radius-md);
+  padding: 1.15rem 1.4rem;
+}
+
+.light-card-headline-text {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.65rem;
+  font-weight: 800;
+  color: #0F172A;
+  line-height: 1.3;
+}
+
+/* 3. Top Metrics Row (CLM vs España vs Diferencial) */
+.light-kpis-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 1rem;
+}
+
+.light-kpi-box {
+  background: #FFFFFF;
+  border-radius: var(--radius-lg);
+  padding: 1.15rem;
+  border: 1px solid var(--border-light);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: var(--shadow-sm);
+}
+
+.light-kpi-box.primary-clm {
+  background: #FFFDFD;
+  border-color: #FECACA;
+  border-top: 3px solid #D60000;
+}
+
+.light-kpi-box.state-espana {
+  background: #FBFDFF;
+  border-color: #BFDBFE;
+  border-top: 3px solid #1D4ED8;
+}
+
+.light-kpi-box.diff-box {
+  background: #FFFDF7;
+  border-color: #FDE68A;
+  border-top: 3px solid #B45309;
+}
+
+.light-kpi-box.subyacente-box {
+  background: #F8FAFC;
+  border-color: var(--border-light);
+  border-top: 3px solid #64748B;
+}
+
+.light-kpi-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.35rem;
+}
+
+.light-kpi-tag-red {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #B91C1C;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.light-kpi-tag-blue {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #1D4ED8;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.light-kpi-tag-amber {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #B45309;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.light-kpi-tag-gray {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #475569;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.light-kpi-badge-rate {
+  background: #FEE2E2;
+  color: #991B1B;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.15rem 0.45rem;
+  border-radius: var(--radius-sm);
+}
+
+.light-kpi-badge-rate-blue {
+  background: #DBEAFE;
+  color: #1E40AF;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.15rem 0.45rem;
+  border-radius: var(--radius-sm);
+}
+
+.light-kpi-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.light-kpi-big-value {
+  font-family: 'Outfit', sans-serif;
+  font-size: 2.35rem;
+  font-weight: 900;
+  line-height: 1.1;
+  margin: 0.35rem 0;
+}
+
+.red-value { color: #D60000; }
+.blue-value { color: #1D4ED8; }
+.amber-value { color: #B45309; }
+.gray-value { color: #334155; }
+
+.light-kpi-submetrics {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px dashed #E2E8F0;
+  padding-top: 0.45rem;
+}
+
+/* 4. PROVINCIAL DIFFERENTIAL SECTION (DISTINCIÓN PROVINCIAL CLARA) */
+.provincial-differential-section {
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+}
+
+.provincial-section-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.provincial-section-title {
+  font-size: 0.825rem;
+  font-weight: 800;
+  color: #0F172A;
+  letter-spacing: 0.06em;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.provincial-count-badge {
+  background: #E2E8F0;
+  color: #334155;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-sm);
+}
+
+.provincial-cards-row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.85rem;
+}
+
+@media (max-width: 950px) {
+  .provincial-cards-row {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  }
+}
+
+.prov-item-card {
+  background: #FFFFFF;
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  border: 1px solid #CBD5E1;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  position: relative;
+  transition: all var(--transition-fast);
+}
+
+.prov-item-card.prov-higher {
+  border-top: 3px solid #DC2626;
+  background: #FFFDFD;
+}
+
+.prov-item-card.prov-equal {
+  border-top: 3px solid #64748B;
+  background: #FFFFFF;
+}
+
+.prov-item-name {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #0F172A;
+}
+
+.prov-item-rate {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.85rem;
+  font-weight: 900;
+  color: #D60000;
+  line-height: 1.1;
+  margin: 0.25rem 0;
+}
+
+.prov-item-monthly {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+/* BADGE CLARA DE DIFERENCIA CON LA ESTATAL */
+.prov-diff-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  padding: 0.35rem 0.5rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  margin: 0.25rem 0;
+}
+
+.diff-badge-higher {
+  background: #FEE2E2;
+  color: #991B1B;
+  border: 1px solid #FECACA;
+}
+
+.diff-badge-neutral {
+  background: #F1F5F9;
+  color: #475569;
+  border: 1px solid #E2E8F0;
+}
+
+.diff-badge-icon {
+  display: flex;
+  align-items: center;
+}
+
+.diff-badge-text {
+  font-size: 0.75rem;
+}
+
+.prov-status-note {
+  font-size: 0.68rem;
+  font-weight: 600;
+  margin-top: 0.2rem;
+}
+
+/* 5. Tira de Alerta de Precios Básicos */
+.light-energy-strip {
+  background: #FFF5F5;
+  border: 1px solid #FECACA;
+  border-radius: var(--radius-md);
+  padding: 0.75rem 1.15rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  font-size: 0.8rem;
+}
+
+.energy-strip-items {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  color: #7F1D1D;
+}
+
+.strip-divider {
+  color: #F87171;
+}
+
+/* 6. Footer of the Card */
+.light-card-footer {
+  border-top: 2px solid #F1F5F9;
+  padding-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.footer-slogan-text {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #B91C1C;
+}
+
+.footer-web-tag {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+/* Footer of the page */
+.site-footer {
+  background: #0F172A;
+  color: #94A3B8;
+  border-top: 3px solid var(--ccoo-red);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .light-social-card {
+    padding: 1.5rem;
+  }
+  .light-card-headline-text {
+    font-size: 1.35rem;
+  }
+  .provincial-cards-row {
+    grid-template-columns: 1fr 1fr;
+  }
+}
